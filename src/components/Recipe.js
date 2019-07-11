@@ -28,24 +28,24 @@ class Recipe extends React.Component {
           <h1 className="App-title">Recipe Search</h1>
         </header>
         <div className="container">
-          <Link className="back-recipe__button" to="/">
-          <span>&#8656;</span> Go Back</Link>
 
           { this.state.activeRecipe.length !== 0 &&
             <a className="active-recipe" href={recipe.source_url}>
               <img className="active-recipe__img" src={recipe.image_url} alt={recipe.title}/>
               <h3 className="active-recipe__title">{ recipe.title }</h3>
-              <h4 className="active-recipe__publisher">
-                Publisher: <span>{ recipe.publisher }</span>
-              </h4>
               <p className="active-recipe__website">View Recipe on:
                 <button className="active-recipe__button" > {recipe.publisher} </button>
               </p>
+              <h4 className="active-recipe__publisher">
+                Publisher: <span>{ recipe.publisher }</span>
+              </h4>
             </a>
           }
           {this.state.activeRecipe.length === 0 &&
             <h4 className="preloading">loading your recipe...</h4>
           }
+
+          <Link className="back-recipe__button" to="/">  <span>&#8656;</span> Go Back</Link>
         </div>
       </div>
     );
