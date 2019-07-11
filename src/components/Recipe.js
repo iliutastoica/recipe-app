@@ -23,22 +23,30 @@ class Recipe extends React.Component {
   render() {
     const recipe = this.state.activeRecipe;
     return (
-      <div className="container">
-        { this.state.activeRecipe.length !== 0 &&
-          <div className="active-recipe">
-            <img className="active-recipe__img" src={recipe.image_url} alt={recipe.title}/>
-            <h3 className="active-recipe__title">{ recipe.title }</h3>
-            <h4 className="active-recipe__publisher">
-              Publisher: <span>{ recipe.publisher }</span>
-            </h4>
-            <p className="active-recipe__website">Website:
-              <span><a href={recipe.publisher_url}>{recipe.publisher_url}</a></span>
-            </p>
-            <button className="active-recipe__button">
-              <Link to="/">Go Home</Link>
-            </button>
-          </div>
-        }
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Recipe Search</h1>
+        </header>
+        <div className="container">
+          <Link className="back-recipe__button" to="/">
+          <span>&#8656;</span> Go Back</Link>
+
+          { this.state.activeRecipe.length !== 0 &&
+            <a className="active-recipe" href={recipe.source_url}>
+              <img className="active-recipe__img" src={recipe.image_url} alt={recipe.title}/>
+              <h3 className="active-recipe__title">{ recipe.title }</h3>
+              <h4 className="active-recipe__publisher">
+                Publisher: <span>{ recipe.publisher }</span>
+              </h4>
+              <p className="active-recipe__website">View Recipe on:
+                <button className="active-recipe__button" > {recipe.publisher} </button>
+              </p>
+            </a>
+          }
+          {this.state.activeRecipe.length === 0 &&
+            <h4 className="preloading">loading your recipe...</h4>
+          }
+        </div>
       </div>
     );
   }
