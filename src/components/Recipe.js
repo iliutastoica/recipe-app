@@ -6,7 +6,7 @@ const config = require('../config/site');
 
 const API_KEY = config.APP_KEY; // 'd7a8cdde9f02265ddde5d843d6f65914'; //
 // const API_KEY2 = config.APP_KEY2;
-console.log(API_KEY);
+// console.log(API_KEY);
 
 class Recipe extends React.Component {
   state = {
