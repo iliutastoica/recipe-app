@@ -15,6 +15,6 @@ module.exports = {
     themeColor: '#2772d0',
     backgroundColor: '#2772d0',
     twitter: '@iliutastoica', // Twitter Username
-    APP_KEY: 'd7a8cdde9f02265ddde5d843d6f65914',
-    APP_KEY2: 'aedbb2d845263a9cad4857bcec585195',
+    APP_KEY: '40698503668e0bb3897581f4766d77f9',
   };
+  //api.edamam.com/search?app_id=900da95e&app_key=40698503668e0bb3897581f4766d77f9&q=chicken
